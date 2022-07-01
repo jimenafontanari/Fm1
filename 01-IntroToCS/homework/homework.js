@@ -1,12 +1,12 @@
 "use strict";
 
-//Ejercicio 1
 function BinarioADecimal(num) {
+  // Ejercicio 1
   // tu codigo aca
 }
 
-//Ejercicio 2
 function DecimalABinario(num) {
+  // Ejercicio 2
   // tu codigo aca
 }
 
