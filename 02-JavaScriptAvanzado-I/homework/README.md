@@ -1,34 +1,46 @@
 # JavaScript Avanzado I: homework
 
-### Temas de la clase
+### **Temas de la clase**
 
 - Scope
 - Hoisting
 - Coerción de datos
 - Contexto de ejecución & entorno léxico
 - Event loop
-- this
+- _this_
 
-### Aprendizaje esperado
+ㅤ
+
+### **Objetivo**
 
 Mediante estos ejercicios podrás experimentar con los conceptos aprendidos en clase, entendiendo, de primera mano y con ejemplos prácticos, cómo una computadora interpreta y ejecuta código escrito en JavaScript, y cómo conviene escribirlo teniendo en cuenta esas características.
 
-### Duración estimada
+ㅤ
+
+### **Duración estimada**
 
 90 minutos
 
-### Instrucciones preliminares
+ㅤ
+
+### **Instrucciones preliminares**
 
 Como tal vez hayas notado, esta homework no tiene tests.  
 Para resolverla, simplemente lee cada ejercicio intentando anticipar qué ocurriría al ejecutar ese código.
 
-## Descripción
+ㅤ
+
+<hr/>
+
+## **Descripción**
 
 Lee detenidamente cada uno de los siguientes ejercicios, tomando lo visto en clase como punto de partida para comprender cómo funcionaría el código en cada caso.  
 Hoy no te toca escribir código, sino leerlo. Busca entender, no sólo cómo funcionaría lo que ves escrito, sino también por qué funcionaría así, cómo podrías modificarlo y qué impacto tendrían tus modificaciones en el resultado obtenido.  
 ¿Dónde y cómo (con qué palabra) están declaradas las variables? ¿En qué orden se ejecutan las operaciones? ¿Cuál es el scope de cada función? ¿A qué hace referencia _this_ en un contexto puntual?  
 **Es importante que**, en una primera instancia, **busques imaginar el resultado del código sin ejecutarlo**. Luego de tomarte tu tiempo para pensarlo, puedes tomar cada bloque y correrlo - en la terminal de NodeJS o en la del navegador - para comprobar tu razonamiento. ¿Estabas en lo cierto? ¿Resultó algo inesperado? ¿Puedes identificar por qué?  
 Recuerda que puedes repasar la clase, hacer tus propias pruebas - modificando el código y observando qué cambia, y conversar con tus compañeros y compañeras para intercambiar ideas.
+
+ㅤ
 
 ### Ejercicio 1: Scope & Hoisting
 
@@ -112,9 +124,12 @@ console.log(instructor);
 console.log(pm);
 ```
 
+ㅤ
+
 ### Ejercicio 2: Coerción de Datos
 
-¿Cuál crees que será el resultado de la ejecución de estas operaciones?:
+¿Cuál crees que será el resultado de la ejecución de cada una de estas operaciones?  
+_Cada línea es independiente_
 
 ```javascript
 6 / "3"
@@ -136,6 +151,8 @@ parseInt("09")
 ```
 
 > Si te quedó alguna duda repasá con [este artículo](http://javascript.info/tutorial/object-conversion).
+
+ㅤ
 
 ### Ejercicio 3: Hoisting
 
@@ -173,6 +190,8 @@ function getFood(food) {
 getFood(false);
 ```
 
+ㅤ
+
 ### Ejercicio 4: _this_
 
 ¿Cuál es el output o salida en consola luego de ejecutar esté código? Explicar por qué:
@@ -196,6 +215,8 @@ var test = obj.prop.getFullname;
 console.log(test());
 ```
 
+ㅤ
+
 ### Ejercicio 5: Event loop
 
 Considerando el siguiente código, ¿Cuál sería el orden en el que se muestra por consola? ¿Por qué?
@@ -215,7 +236,11 @@ function printing() {
 printing();
 ```
 
-## Recuerda que...
+<hr/>
+
+ㅤ
+
+### **Recuerda que...**
 
 - El orden en el que se ejecutan las operaciones en una misma línea está determinado por la **precedencia** y la **asociatividad**.
 - Una variable puede estar o no en el **scope** de un determinado **contexto de ejecución**, según la manera y el lugar en que fue declarada.
