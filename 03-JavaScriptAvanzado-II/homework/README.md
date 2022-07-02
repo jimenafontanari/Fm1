@@ -29,6 +29,8 @@ Tendremos 4 ejercicios para resolver. Dos de ellos acerca de clausuras y
 otros dos donde deberás usar el método bind.
 En el archivo `homework.js` se encuentran predefinidas las funciones y recursos necesarios para la tarea.
 
+## **Extra credit**
+
 ㅤ
 <hr> 
 
