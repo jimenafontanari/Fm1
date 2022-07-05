@@ -4,8 +4,10 @@
 
 - Pseudocódigo
 - Algoritmos
-- Complejidad
-- Big O Notation
+- Complejidad - Big O Notation
+- Bubble Sort
+- Insertion Sort
+- Selection Sort
 
 ㅤ
 
@@ -91,3 +93,9 @@ El parámetro recibido será un arreglo de elementos de tipo `number`.
 El valor retornado será un arreglo de datos un arreglo de elementos de tipo `number`.
 
 <hr/>
+
+ㅤ
+
+### **Recursos adicionales**
+
+[Página web](https://www.toptal.com/developers/sorting-algorithms) donde podrás ver en tiempo real una comparación de todos los algoritmos.
