@@ -24,13 +24,9 @@ uso de ella.
 
 ### **Instrucciones preliminares**
 
-Para poder ejecutar los test de esta tarea es necesario que nos ubiquemos  
-dentro de la carpeta **_homework_** utilizando el comando `cd + nombreCarpeta`.
-
-Cuando estés allí, debes ejecutar el comando `npm install` o `npm i`
-
-Listo! Ya puedes correr los test con el comando `npm test`
-
+1. Para poder ejecutar los tests de esta tarea es necesario que nos ubiquemos dentro de la carpeta homework. En la consola, corre el comando `cd` + nombre_de_la_carpeta
+2. Cuando estés allí, instala las dependencias con el comando `npm install` o `npm i`
+3. ¡Listo! Ya puedes correr los test con el comando `npm test`
 ㅤ
 
 ## **Descripción**

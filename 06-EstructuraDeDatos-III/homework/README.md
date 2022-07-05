@@ -21,12 +21,9 @@ El objetivo de la homework no solo será que comprendas el funcionamiento de un 
 
 ### **Instrucciones preliminares**
 
-Para poder ejecutar los test de esta tarea es necesario que nos ubiquemos  
-dentro de la carpeta **_homework_** utilizando el comando `cd + nombreCarpeta`.
-
-Cuando estés allí, debes ejecutar el comando `npm install` o `npm i`
-
-Listo! Ya puedes correr los test con el comando `npm test`
+1. Para poder ejecutar los tests de esta tarea es necesario que nos ubiquemos dentro de la carpeta homework. En la consola, corre el comando `cd` + nombre_de_la_carpeta
+2. Cuando estés allí, instala las dependencias con el comando `npm install` o `npm i`
+3. ¡Listo! Ya puedes correr los test con el comando `npm test`
 
 ㅤ
 
@@ -37,6 +34,8 @@ Hoy vas a hacer algo similar a la estructura de datos que vimos en la tarea ante
 En este punto puedes comenzar la tarea, verás instrucciones dentro del archivo `homework.js`
 
 ㅤ
+<hr>
+
 
 ### **Recuerda que...**
 
@@ -47,7 +46,6 @@ La búsqueda de elementos en un Árbol binario de búsqueda es MUY eficiente, ya
 
 [Wikipedia](https://es.wikipedia.org/wiki/Recorrido_de_%C3%A1rboles) sobre recorridos de árboles.
 
-<hr>
 
 ## **Extra credit**
 
