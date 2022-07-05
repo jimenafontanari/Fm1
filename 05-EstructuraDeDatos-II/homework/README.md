@@ -40,6 +40,8 @@ deberemos crear sus Nodos. Una vez tengamos la lista y los nodos, vamos a agrega
 métodos al prototipo de la Lista, para poder utilizarlos.
 En cuanto a Hash table, vamos a implementar su función constructora / clase y tambien le añadiremos algunos métodos.
 
+En este punto puedes comenzar la tarea, verás instrucciones dentro del archivo `homework.js`
+
 ㅤ
 
 ### **Recuerda que...**
