@@ -10,9 +10,9 @@ Implementar la clase LinkedList, definiendo los siguientes métodos:
   search(isEven), donde isEven es una función que retorna true cuando recibe por parámetro un número par, busca un nodo cuyo valor sea un número par.
   En caso de que la búsqueda no arroje resultados, search debe retornar null.
 */
-
 function LinkedList() {
   this.head = null;
+  // this.length = 0; //opcional
 }
 
 function Node(value) {
@@ -21,77 +21,81 @@ function Node(value) {
 }
 
 LinkedList.prototype.add = function (value) {
-  var newNodo = new Node(value); // crea la nueva instancia de la clase node con el value que le proporciona y luego se enlaza
+  var nodo = new Node(value);
 
+  //lista vacia
   if (!this.head) {
-    this.head = newNodo;
-    return value;
+    this.head = nodo;
   }
-  let current = this.head;
-  while (current.next) {
-    current = current.next;
-  }
-  current.next = newNodo;
-};
-LinkedList.prototype.search = function (target) {
-  let current = this.head;
-  while (current) {
-    if (typeof target === `function`) {
-      if (target(current.value)) {
-        return current.value;
-      }
-    } else if (current.value === target) {
-      return current.value;
+
+  //lista no vacia
+  else {
+    var current = this.head;
+    while (current.next) {
+      current = current.next;
     }
-    current = current.next;
+    current.next = nodo;
   }
-  return null;
 };
 
 LinkedList.prototype.remove = function () {
-  if (!this.head) {
-    return null; // Lista vacía, no se puede eliminar nada
+  //lista vacia
+  if (!this.head) return null;
+
+  //lista tiene un nodo
+  var current = this.head;
+
+  if (!current.next) {
+    var nodeValue = current.value;
+    this.head = null;
   }
 
-  let removedData;
-  if (!this.head.next) {
-    // Lista con un solo nodo
-    removedData = this.head.value;
-    this.head = null;
-  } else {
-    // Lista con más de un nodo
-    let current = this.head;
-    while (current.next.next !== null) {
+  //lista tiene más de un nodo
+  else {
+    while (current.next.next) {
       current = current.next;
     }
-    removedData = current.next.value;
+    var nodeValue = current.next.value;
     current.next = null;
   }
-
-  return removedData;
+  return nodeValue;
 };
 
-const linkedList = new LinkedList();
-linkedList.add("one");
-linkedList.add("two");
-linkedList.add("three");
-linkedList.add("four");
-linkedList.add("3");
-console.log(linkedList);
+LinkedList.prototype.search = function (algunaCosa) {
+  //lista vacia
+  if (!this.head) return null;
 
-console.log(linkedList.search("two")); // Output: 'two'
-console.log(linkedList.search("sdd")); // Output: null
-console.log(linkedList.search("one")); // Output: 'one'
-console.log(linkedList.search("four")); // Output: 'four'
-console.log(linkedList.search("3"));
+  //lista no vacia
+  var current = this.head;
 
-console.log(linkedList.remove("two")); // Output: 'two'
-console.log(linkedList.remove("sdd")); // Output: null
-console.log(linkedList.remove("one")); // Output: 'one'
-console.log(linkedList.remove("four")); // Output: 'four'
-console.log(linkedList.remove("3"));
+  while (current) {
+    if (typeof algunaCosa === "function") {
+      if (algunaCosa(current.value)) return current.value;
+    }
 
-//El método remove primero verifica si la lista está vacía. Si lo está, retorna null porque no hay nada que eliminar. Luego, maneja el caso en que la lista tiene un solo nodo y el caso en que tiene más de un nodo. Si la lista tiene un solo nodo, se elimina ese nodo y se actualiza la cabeza de la lista. Si la lista tiene más de un nodo, se recorre la lista hasta el penúltimo nodo y se elimina la referencia al último nodo.
+    if (algunaCosa === current.value) return current.value;
+    else {
+      current = current.next;
+    }
+  }
+
+  return null;
+};
+
+//ejemplo
+// var lista1 = new LinkedList();
+// lista1.add(9);
+// lista1.add(5);
+// lista1.add(4);
+// lista1.add(8);
+
+// lista1.remove();
+// lista1.remove();
+
+// console.log(lista1.search(9));
+// console.log(lista1.search(1));
+
+// console.log(lista1);
 
 /* EJERCICIO 2
 Implementar la clase HashTable.
@@ -106,58 +110,48 @@ La clase debe tener los siguientes métodos:
 
 Ejemplo: supongamos que quiero guardar {instructora: 'Ani'} en la tabla. Primero puedo chequear, con hasKey, si ya hay algo en la tabla con el nombre 'instructora'; luego, invocando set('instructora', 'Ani'), se almacenará el par clave-valor en un bucket específico (determinado al hashear la clave)
 */
-function HashTable(numBuckets) {
-  this.numBuckets = numBuckets || 35;
-  this.buckets = new Array(this.numBuckets);
-  for (let i = 0; i < this.numBuckets; i++) {
-    this.buckets[i] = {};
-  }
+function HashTable() {
+  this.buckets = [];
+  this.numBuckets = 35;
 }
 
 HashTable.prototype.hash = function (key) {
-  let total = 0;
-  for (let i = 0; i < key.length; i++) {
-    total += key.charCodeAt(i);
+  //'hola' --> 'h' + 'o' + 'l' + 'a' --> total % 35
+  var total = 0;
+
+  for (var i = 0; i < key.length; i++) {
+    total += key[i].charCodeAt();
   }
-  return total % this.numBuckets;
+
+  return total % this.numBuckets; //0 - 34
 };
 
 HashTable.prototype.set = function (key, value) {
-  if (typeof key !== "string") throw TypeError("Keys must be strings");
+  // [{foobar: value1}]
 
-  const index = this.hash(key);
+  if (typeof key !== "string") throw new TypeError("Keys must be strings");
+
+  var index = this.hash(key);
+
+  if (!this.buckets[index]) {
+    this.buckets[index] = {};
+  }
+
   this.buckets[index][key] = value;
 };
 
 HashTable.prototype.get = function (key) {
-  if (typeof key !== "string") {
-    throw new Error("Keys must be strings.");
-  }
+  var index = this.hash(key);
 
-  const index = this.hash(key);
   return this.buckets[index][key];
 };
 
 HashTable.prototype.hasKey = function (key) {
-  if (typeof key !== "string") {
-    throw new Error("Keys must be strings.");
-  }
+  // return this.buckets.some(x => x.hasOwnProperty(key));
 
-  const index = this.hash(key);
+  var index = this.hash(key);
   return this.buckets[index].hasOwnProperty(key);
 };
-
-// Ejemplo de manejo de colisiones
-const hashTable = new HashTable();
-hashTable.set("instructora", "Ani");
-hashTable.set("in", "Collisions");
-console.log(hashTable);
-console.log(hashTable.get("instructora")); // Output: 'Ani'
-console.log(hashTable.get("in")); // Output: 'Collisions'
-
-// Ejemplo de uso de hasKey
-console.log(hashTable.hasKey("instructora")); // Output: true
-console.log(hashTable.hasKey("otro")); // Output: false
 
 // No modifiquen nada debajo de esta linea
 // --------------------------------

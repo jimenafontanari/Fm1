@@ -1,0 +1,5 @@
+var instructor = "Tony";
+if (true) {
+  let instructor = "Ftoni";
+}
+console.log(instructor);
