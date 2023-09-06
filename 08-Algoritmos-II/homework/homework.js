@@ -66,7 +66,33 @@ function quickSort(array) {
 const arr = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
 const sortedArr = quickSort(arr);
 console.log(sortedArr);
+//if (array.length === 1 || array.length === 0) {
+// si el array posee 1 elemento...
+//     return array;
+//   }
+// // lisandro desarrollo
+// if (array.length > 1) {
+//   // si el array tiene 2 elementos o más
+//   var pivote = array[0]; // seleccionamos el primer elemento del array como pivote
+//   var array_pivote = [pivote]; // guardamos el pivote en un nuevo arreglo (central)
+//   var array_derecha = []; // arreglo para mayores al pivote
+//   var array_izquierda = []; // arreglo para menores al pivote
 
+//   for (let i = 1; i < array.length; i++) {
+//     if (array[i] >= pivote) {
+//       array_derecha.push(array[i]);
+//     }
+
+//     if (array[i] < pivote) {
+//       array_izquierda.push(array[i]);
+//     }
+//   }
+
+//   return quickSort(array_izquierda).concat(
+//     quickSort(array_pivote),
+//     quickSort(array_derecha)
+//   );
+// }
 function mergeSort(array) {
   //[9,7,3,1,5,2,6]
   // Implementar el método conocido como mergeSort para ordenar de menor a mayor
