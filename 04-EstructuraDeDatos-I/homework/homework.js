@@ -123,15 +123,16 @@ Pueden utilizar class o función constructora.
 function Queue() {
   this.array = [];
 }
+//enqueue: agrega un valor respetando el orden.
 
 Queue.prototype.enqueue = function (value) {
   this.array.push(value);
 };
-
+//dequeue: remueve un valor respetando el orden. Retorna undefined cuando la queue está vacía.
 Queue.prototype.dequeue = function () {
   return this.array.shift();
 };
-
+//size: retorna el tamaño (cantidad de elementos) de la queue.
 Queue.prototype.size = function () {
   return this.array.length;
 };
@@ -176,6 +177,9 @@ Queue.prototype.size = function () {
 
 // queue1.prueba();
 /*
+
+
+
 
 /*⚠️ No modificar nada debajo de esta línea ⚠️*/
 module.exports = {
